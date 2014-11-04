@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="MRSBackupMode" Module="MRS" ACCESS_CONTROL="modify,read" DEST_SVC="custom:ubp_mrs_moc:CreateModule:before" FILTER="">
+		<Parameter name="ID" desc="ID" type="int" range="" constrain="PRI" />
+		<Parameter name="Mode" desc="Mode" type="enum" range="0,1" vlist="0:NormalMode(Normal Mode) ,1:MDCBackupMode(MDC Backup Mode)" constrain="NOT NULL" mode="update" default="0" />
+	</MOC>
+</Moc-Config>

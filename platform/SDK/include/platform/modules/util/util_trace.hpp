@@ -1,0 +1,43 @@
+﻿/********************************************************************
+  Copyright 2012,TD-Tech. Co., Ltd.
+  Filename:   util_trace.hpp
+  Author:     Wu Gang
+  Created:    2012/09/09 14:21
+  Description:
+
+*********************************************************************/
+
+#ifndef UBP_PLATFORM_MOUDLES_UTIL_TRACE_HPP_
+#define UBP_PLATFORM_MOUDLES_UTIL_TRACE_HPP_
+
+#include "platform/modules/trace/ubp_trace.hpp"
+#include "platform/modules/error/ubp_error.hpp"
+
+//const static char* LOGGER_MODULE="PLATFORM.UTIL";
+
+#define UTIL_DEBUG(LOG) UBP_LOGGER_DEBUG("PLATFORM.UTIL", LOG)
+#define UTIL_INFO(LOG) UBP_LOGGER_INFO("PLATFORM.UTIL", LOG)
+#define UTIL_WARN(LOG)  UBP_LOGGER_WARN("PLATFORM.UTIL", LOG)
+#define UTIL_ERROR(LOG)  UBP_LOGGER_ERROR("PLATFORM.UTIL", LOG)
+#define UTIL_FATAL(LOG)  UBP_LOGGER_FATAL("PLATFORM.UTIL", LOG)
+
+#define UTIL_CHECK_RETURN_ERR(CHECK_VAL,ERR_CODE) \
+    CHECK_RETURN_ERR(UBP_MQ_ERROR,CHECK_VAL,ERR_CODE)
+
+#define UTIL_CHECK_PTR_RETURN_ERR(PTR,ERROR_CODE) \
+    CHECK_PTR_RETURN_ERR(UBP_MQ_ERROR,PTR,ERROR_CODE)
+
+#define UTIL_CHECK_PTR_RETURN_ERR_NULL(PTR,ERROR_CODE) \
+    CHECK_PTR_RETURN_ERR_NULL(UBP_MQ_ERROR,PTR,ERROR_CODE)
+
+#define UTIL_CHECK_RETURN(CHECK_VAL,ERRMSG)\
+    CHECK_RETURN(UBP_MQ_ERROR,CHECK_VAL,ERRMSG)
+
+#define UTIL_CHECK_PTR_RETURN(PTR,ERRMSG)\
+    CHECK_PTR_RETURN(UBP_MQ_ERROR,PTR,ERRMSG)
+
+#define UTIL_CHECK_PTR_RETURN_NULL(PTR,ERRMSG)\
+    CHECK_PTR_RETURN_NULL(UBP_MQ_ERROR,PTR,ERRMSG)\
+
+#endif //UBP_PLATFORM_MOUDLES_UTIL_TRACE_HPP_
+

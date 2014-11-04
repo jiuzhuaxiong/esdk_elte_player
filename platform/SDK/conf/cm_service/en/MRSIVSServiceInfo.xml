@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="MRSIVSServiceInfo" Module="MRS" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="custom:ubp_mrs_moc:CreateModule:before" FILTER="">
+		<Parameter name="NodeID" desc="Node ID" type="int" range="[1,65535]" constrain="PRI" FK="FK:DCUC:MRSNode:NodeID" mode="display" />
+		<Parameter name="IP" desc="IVS service IP address" type="string" range="[0,15]" constrain="NOT NULL" ipv4="" mode="update" />
+		<Parameter name="Port" desc="IVS service port" type="int" range="[1,65535]" constrain="NOT NULL" mode="update" />
+		<Parameter name="UserName" desc="User name" type="string" range="[1,127]" constrain="NOT NULL" mode="update" />
+		<Parameter name="Password" desc="Password" type="string" range="[1,63]" constrain="NOT NULL" c_type="password" mode="update" />
+	</MOC>
+</Moc-Config>

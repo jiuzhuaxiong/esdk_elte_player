@@ -1,0 +1,89 @@
+package ubp.platform.sca;
+
+//////////////////////////////////////////////////////////////////////////
+// ScaMessage
+/////////////////////////////////////////////////////////////////////////
+message ScaMessage{
+	required string msg_type = 1;
+	optional string param = 2;
+	optional string result = 3;
+}
+message ScaMsgServiceInfo{
+	required int32 node_id = 1;
+	required string host_ip = 2;
+	required string svc_name = 3;
+	required string svc_type = 4;
+	required int32 rpn_port = 5;
+	required int32 pub_port = 6;
+	required int32 pair_port = 7;
+	required string core = 8;
+	optional string domain = 9;
+  optional string hostname = 10;
+}
+message ScaMsgServiceInfoList
+{
+	repeated ScaMsgServiceInfo svcs = 1;
+}
+message ScaMsgServiceRunInfo{
+	required ScaMsgServiceInfo svc_info = 1;
+	required int32 svc_pid = 2;
+	required string svc_state = 3;
+	required uint64 start_time = 4;
+}
+message ScaMsgServiceRunInfoList
+{
+	repeated ScaMsgServiceRunInfo svcs = 1;
+}
+
+message ScaMsgSvcState{
+	required string svc_key = 1;
+	optional string svc_state = 2;
+}
+
+message ScaMsgSvcStateList{
+	repeated ScaMsgSvcState states = 1;
+}
+
+message ScaSvcMessage{
+	required string msg_type = 1;
+	optional int32 version_id = 2;
+	optional ScaMsgServiceInfoList svc_list = 3;
+	optional ScaMsgSvcStateList svc_state_list = 4;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// NetWorkMessage
+/////////////////////////////////////////////////////////////////////////
+message NetWorkMessage{
+	optional string msg_type = 1;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// IP相关信息
+//////////////////////////////////////////////////////////////////////////
+message NetWorkInfo
+{
+  optional string device = 1;
+  optional string old_ip = 2;
+  optional string old_netmask = 3;
+  optional string old_gateway = 4;
+  optional string new_ip = 5;
+  optional string new_netmask = 6;
+  optional string new_gateway = 7;
+  optional string txqueuelen = 8;
+  optional string updown = 9;
+}
+
+message NetWorkInfoList
+{
+  repeated NetWorkInfo network = 1;
+}
+
+//////////////////////////////////////////////////////////////////////////
+// IP修改响应
+//////////////////////////////////////////////////////////////////////////
+message NetWorkInfoListRsp
+{
+  required sint32 Result = 1;
+}
+//////////////////////////////////////////////////////////////////////////

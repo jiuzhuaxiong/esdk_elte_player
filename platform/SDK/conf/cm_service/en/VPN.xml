@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="VPN" Module="OMC" ACCESS_CONTROL="read" DEST_SVC="" FILTER="">
+		<Parameter name="VPNID" desc="VPN number" type="int" range="[1,200]" constrain="PRI" mode="display" />
+		<Parameter name="VPNName" desc="VPN name" type="string" range="[0,64]" mode="update" />
+	</MOC>
+</Moc-Config>

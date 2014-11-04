@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="CallForward" Module="BCC" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="ISDN" desc="用户号码" type="string" range="[1,20]" constrain="PRI" all_num="" mode="display" />
+		<Parameter name="TargetISDN" desc="转移目的号码" type="string" range="[1,20]" constrain="NOT NULL" mode="update" />
+		<Parameter name="ActiveState" desc="激活状态" type="enum" range="0,1" vlist="0:Deactive（去激活）,1:Active（激活)" constrain="NOT NULL" mode="update" />
+	</MOC>
+</Moc-Config>

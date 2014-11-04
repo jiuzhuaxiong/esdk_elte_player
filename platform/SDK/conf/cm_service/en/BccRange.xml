@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="BccRange" Module="BCC" ACCESS_CONTROL="add,delete,read" DEST_SVC="custom:ubp_isdnrange:CreateModule:before" FILTER="">
+		<Parameter name="BccNodeID" desc="BCC node ID" type="int" range="[0,2147483647]" constrain="PRI" mode="update" />
+		<Parameter name="StartIsdn" desc="Begin ISDN" type="string" range="[1,8]" constrain="PRI" mode="update" />
+		<Parameter name="EndIsdn" desc="End ISDN" type="string" range="[1,8]" constrain="PRI" ge="EndIsdn,StartIsdn" mode="update" />
+	</MOC>
+</Moc-Config>

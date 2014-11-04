@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="DCRanges" Module="OMC" ACCESS_CONTROL="read" DEST_SVC="" FILTER="">
+		<Parameter name="ISDN" desc="DC User number" type="string" range="[1,8]" constrain="PRI" not_begin_with="0" all_num="" mode="display" FK="FK:DCUC:DCAttribute:ISDN" />
+		<Parameter name="RangeID" desc="Index of the number segment managed by the DC" type="int" range="" constrain="PRI" mode="display" FK="FK:DCUC:RangeList:RangeID" />
+	</MOC>
+</Moc-Config>

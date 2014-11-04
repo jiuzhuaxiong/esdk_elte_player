@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="PSTNGateWay" Module="BCC" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="NodeID" desc="节点ID" type="int" range="[0,99999999]" constrain="PRI" mode="display" FK="FK:DRUR:UBPNode:NodeID" />
+		<Parameter name="GwOutSwitch" desc="局向开关" type="enum" range="0,1" vlist="0:OFF（关闭局向连接）,1:ON（打开局向连接)" constrain="NOT NULL" mode="update" />
+		<Parameter name="GwPbxSwitch" desc="PBX开关" type="enum" range="0,1" vlist="0:OFF（关闭PBX连接）,1:ON（打开PBX连接)" constrain="NOT NULL" control="0:,1:GwPbxFirstScopeStart|GwPbxFirstScopeEnd|GwPbxSecondScopeStart|GwPbxSecondScopeEnd|GwPbxThirdScopeStart|GwPbxThirdScopeEnd" mode="update" />
+		<Parameter name="GwPbxFirstScopeStart" desc="Pbx绑定号段一开始" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxFirstScopeEnd" desc="Pbx绑定号段一结束" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxFirstScopeEnd,GwPbxFirstScopeStart" dup="GwPbxFirstScopeStart|GwPbxFirstScopeEnd" mode="update" />
+		<Parameter name="GwPbxSecondScopeStart" desc="Pbx绑定号段二开始" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxSecondScopeEnd" desc="Pbx绑定号段二结束" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxSecondScopeEnd,GwPbxSecondScopeStart" dup="GwPbxSecondScopeStart|GwPbxSecondScopeEnd" mode="update" />
+		<Parameter name="GwPbxThirdScopeStart" desc="Pbx绑定号段三开始" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxThirdScopeEnd" desc="Pbx绑定号段三结束" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxThirdScopeEnd,GwPbxThirdScopeStart" dup="GwPbxThirdScopeStart|GwPbxThirdScopeEnd" mode="update" />
+	</MOC>
+</Moc-Config>

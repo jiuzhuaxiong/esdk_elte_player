@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="VideoCodecPara" Module="BDC" ACCESS_CONTROL="modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="RecordId" desc="Record ID" type="int" range="" constrain="PRI" />
+		<Parameter name="Preset" desc="Encoding preset" type="enum" range="0,1,2" vlist="0:ultrafast,1:medium,2:veryslow" mode="update" default="1" />
+		<Parameter name="RCMode" desc="Rate control mode" type="enum" range="0,1" vlist="0:Bitrate,1:CRF" mode="update" default="0" />
+		<Parameter name="Bitrate" desc="Average bitrate(kbps)" type="int" range="[100,500]" mode="update" default="200" />
+		<Parameter name="CRF" desc="Constant rate factor" type="enum" range="0,1,2" vlist="0:high,1:medium,2:low" mode="update" default="1" />
+	</MOC>
+</Moc-Config>

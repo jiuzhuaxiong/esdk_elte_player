@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="IpcRecTaskInfo" Module="MRS" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="SessionId" desc="Task ID" type="string" range="[1,64]" constrain="PRI" mode="display" />
+		<Parameter name="TaskStatus" desc="Task status" type="enum" range="0,1,2,3,4,5" vlist="0: CREATED (creation success),1: FAIL (storage failure),2: RECEIVING (being stored),3: SUCCESS (success),4：WATITO_DELETEING (waiting to be deleted),5: DELETED (deletion success)" constrain="NOT NULL" mode="update" />
+		<Parameter name="IpcIndex" desc="IPC index" type="int" range="[1,65535]" constrain="NOT NULL" mode="update" />
+		<Parameter name="IpcVpn" desc="IPC VPN" type="int" range="" constrain="NOT NULL" />
+		<Parameter name="OptStatus" desc="Operation status" type="int" range="[1,65536]" constrain="NOT NULL" mode="update" />
+		<Parameter name="ErrType" desc="Error type" type="int" range="[1,65536]" constrain="NOT NULL" mode="update" />
+		<Parameter name="StartTime" desc="Begin time" type="datetime" range="[1,64]" constrain="NOT NULL" mode="update" />
+		<Parameter name="EndTime" desc="End time" type="datetime" range="[1,64]" constrain="NOT NULL" ge="EndTime,BeginTime" mode="update" />
+	</MOC>
+</Moc-Config>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="UBPNode" Module="BCC" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="custom:ubp_ubpnode:CreateModule:before" FILTER="">
+		<Parameter name="NodeID" desc="设备节点ID" type="int" range="[0,99999999]" constrain="PRI" mode="display" />
+		<Parameter name="NodeName" desc="节点名" type="string" range="[0,31]" mode="update" />
+		<Parameter name="NodeType" desc="节点类型" type="enum" range="1,2,3,4,5,6,7,9" vlist="1:BDC,2:VGW,3:MRS,4:ECN,5:PSTNGW,6:PLMNGW,7:TKGW,9:OTHER" constrain="NOT NULL" control="0:,1:,2:,3:ISDN|SipPass,4:,5:ISDN|SipPass,6:ISDN|SipPass,7:,9:" mode="display" />
+		<Parameter name="AddrIPV4" desc="IPV4地址" type="string" range="[7,15]" constrain="NOT NULL" ipv4="" mode="update" />
+		<Parameter name="SipPort" desc="SIP端口号" type="int" range="[1024,65535]" constrain="NOT NULL" mode="update" default="5060" />
+		<Parameter name="ISDN" desc="用户号码" type="int" range="[99900001,99909999]" constrain="NOT NULL" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="SipPass" desc="SIP密码" type="string" range="[1,18]" constrain="NOT NULL" c_type="password" mode="update" />
+	</MOC>
+</Moc-Config>

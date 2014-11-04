@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="VPNRange" Module="OMC" ACCESS_CONTROL="read" DEST_SVC="" FILTER="">
+		<Parameter name="VPNID" desc="VPNID" type="int" range="[1,200]" constrain="PRI" mode="update" />
+		<Parameter name="FromISDN" desc="Number segment start" type="string" range="[1,8]" constrain="PRI" mode="update" />
+		<Parameter name="ToISDN" desc="Number segment end" type="string" range="[1,8]" constrain="PRI" ge="ToMSISDN,FromMSISDNISDN" mode="update" />
+	</MOC>
+</Moc-Config>

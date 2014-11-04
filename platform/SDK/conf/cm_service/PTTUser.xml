@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="PTTUser" Module="OMC" ACCESS_CONTROL="read" DEST_SVC="" FILTER="">
+		<Parameter name="ISDN" desc="用户号码" type="string" range="[1,8]" constrain="PRI" not_begin_with="0" all_num="" mode="display" />
+		<Parameter name="UserName" desc="用户名称" type="string" range="[0,32]" no_double_space="" no_double_percent="" mode="update" />
+		<Parameter name="UserPriority" desc="优先级" type="int" range="[1,15]" constrain="NOT NULL" mode="update" default="15" />
+		<Parameter name="SipPass" desc="SIP密码" type="string" range="[1,18]" constrain="NOT NULL" c_type="password" mode="update" />
+		<Parameter name="Capability" desc="用户的业务权限" type="bitset" range="" vlist="1:P2M（组呼）,2:P2PV（视频点呼）,4:VideoMonitor监控" constrain="NOT NULL" mode="update" default="3" />
+		<Parameter name="VPNID" desc="所属VPN" type="int" range="[0,200]" constrain="NOT NULL" mode="update" default="0" />
+		<Parameter name="VPNOut" desc="出VPN权限" type="enum" range="0,1" vlist="0:Forbidden禁止,1:Allowed允许" mode="update" default="0" />
+		<Parameter name="VPNIn" desc="入VPN权限" type="enum" range="0,1" vlist="0:Forbidden禁止,1:Allowed允许" mode="update" default="1" />
+	</MOC>
+</Moc-Config>

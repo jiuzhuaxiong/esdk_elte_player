@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="UserPlaneGlobalPara" Module="BDC" ACCESS_CONTROL="modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="RecordId" desc="Record ID" type="int" range="" constrain="PRI" />
+		<Parameter name="UserInactiveThd" desc="User inactive period threshold(s)" type="int" range="[15,300]" mode="update" default="30" />
+		<Parameter name="DecJitterBuffer" desc="Size of video jitter buffer for decoder(ms)" type="int" range="[0,5000]" mode="update" default="100" />
+		<Parameter name="RingtoneLanguage" desc="Language classification of ringtone" type="enum" range="0,1" vlist="0:Local,1:English" mode="update" default="0" />
+	</MOC>
+</Moc-Config>

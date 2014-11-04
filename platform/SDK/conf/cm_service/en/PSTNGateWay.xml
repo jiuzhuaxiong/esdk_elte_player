@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="PSTNGateWay" Module="BCC" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="NodeID" desc="Node ID" type="int" range="[0,99999999]" constrain="PRI" mode="display" FK="FK:DRUR:UBPNode:NodeID" />
+		<Parameter name="GwOutSwitch" desc="Out switch" type="enum" range="0,1" vlist="0: OFF (connection disabled),1: ON (connection enabled)" constrain="NOT NULL" mode="update" />
+		<Parameter name="GwPbxSwitch" desc="PBX switch" type="enum" range="0,1" vlist="0: OFF (connection disabled),1: ON (connection enabled)" constrain="NOT NULL" control="0:,1:GwPbxFirstScopeStart|GwPbxFirstScopeEnd|GwPbxSecondScopeStart|GwPbxSecondScopeEnd|GwPbxThirdScopeStart|GwPbxThirdScopeEnd" mode="update" />
+		<Parameter name="GwPbxFirstScopeStart" desc="PBX range 1 begin" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxFirstScopeEnd" desc="PBX range 1 end" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxFirstScopeEnd,GwPbxFirstScopeStart" dup="GwPbxFirstScopeStart|GwPbxFirstScopeEnd" mode="update" />
+		<Parameter name="GwPbxSecondScopeStart" desc="PBX range 2 begin" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxSecondScopeEnd" desc="PBX range 2 end" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxSecondScopeEnd,GwPbxSecondScopeStart" dup="GwPbxSecondScopeStart|GwPbxSecondScopeEnd" mode="update" />
+		<Parameter name="GwPbxThirdScopeStart" desc="PBX range 3 begin" type="string" range="[0,8]" not_begin_with="0" all_num="" mode="update" />
+		<Parameter name="GwPbxThirdScopeEnd" desc="PBX range 3 end" type="string" range="[0,8]" not_begin_with="0" all_num="" ge="GwPbxThirdScopeEnd,GwPbxThirdScopeStart" dup="GwPbxThirdScopeStart|GwPbxThirdScopeEnd" mode="update" />
+	</MOC>
+</Moc-Config>

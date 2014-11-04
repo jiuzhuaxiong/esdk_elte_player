@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="RangeList" Module="OMC" ACCESS_CONTROL="read" DEST_SVC="" FILTER="">
+		<Parameter name="RangeID" desc="Range ID" type="int" range="" constrain="PRI" mode="display" />
+		<Parameter name="RangeAlias" desc="Range Alias" type="string" range="[0,10]" mode="update" />
+		<Parameter name="RangeCategory" desc="Range Category" type="enum" range="1,2" vlist="1: user number segment,2: group number segment" mode="update" />
+		<Parameter name="FromISDN" desc="Begin ISDN" type="string" range="[1,8]" mode="update" />
+		<Parameter name="ToISDN" desc="End ISDN" type="string" range="[1,8]" ge="ToMSISDN,FromMSISDN" mode="update" />
+	</MOC>
+</Moc-Config>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Moc-Config>
+	<MOC MOC_NAME="MRSFileInfo" Module="MRS" ACCESS_CONTROL="add,delete,modify,read" DEST_SVC="" FILTER="">
+		<Parameter name="SessionId" desc="Task ID" type="string" range="[1,64]" constrain="PRI" mode="display" />
+		<Parameter name="FileId" desc="File ID" type="int" range="[1,65535]" constrain="PRI" mode="display" />
+		<Parameter name="FilePath" desc="File path" type="string" range="[1,250]" constrain="NOT NULL" mode="update" />
+		<Parameter name="FileStatus" desc="File status" type="enum" range="0,1,2,3,4,5" vlist="0: CREATED (creation success),1: FAIL (storage failure),2: RECEIVING (being stored),3: SUCCESS (success),4：WATITO_DELETEING (waiting to be deleted),5: DELETED (deletion success)" constrain="NOT NULL" mode="update" />
+		<Parameter name="RecType" desc="Task type" type="enum" range="1,2" vlist="1: SIPCALLREC (session recording),2: IPCREC (IPC recording)," constrain="NOT NULL" mode="display" />
+		<Parameter name="BeginTime" desc="Begin time" type="datetime" range="[1,64]" constrain="NOT NULL" />
+		<Parameter name="EndTime" desc="End time" type="datetime" range="[1,64]" constrain="NOT NULL" mode="update" />
+		<Parameter name="Remark" desc="Remark" type="string" range="[1,1024]" mode="update" />
+	</MOC>
+</Moc-Config>
